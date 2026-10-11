@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements-dev.txt
+
+      # dna_format lives in a separate checkout. Beside this one is a location
+      # scripts/config.py searches, so no environment variable is needed.
+      - name: Fetch snapgene-primer-registrar
+        run: >-
+          git clone --depth 1
+          https://github.com/takeisue1270/Registering_Primers_in_SnapGene.git
+          ../snapgene-primer-registrar
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Test
+        # The suite is entirely offline: no workbook, no Excel, no network.
+        run: pytest -q
