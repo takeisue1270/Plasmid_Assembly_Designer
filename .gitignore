@@ -1,0 +1,23 @@
+# machine-specific paths and names; never published
+config.local.json
+
+# laboratory records and maps are inputs, not part of the package
+*.xlsx
+*.xlsm
+~$*
+*.dna
+Backup/
+reports/
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db

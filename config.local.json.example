@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "Copy this file to config.local.json, then edit the two paths and the two names.",
+    "config.local.json is gitignored: machine paths and the names of real people",
+    "never enter the repository.",
+    "The paths can instead come from PLASMID_CLONING_ROOT and PLASMID_CLONING_REGISTRAR,",
+    "or from --project-root / --registrar on any script."
+  ],
+  "paths": {
+    "project_root": "/path/to/your/project/tree",
+    "registrar": "/path/to/snapgene-primer-registrar"
+  },
+  "project_sheet": {
+    "defaults": {
+      "made_by": "who builds the plasmid",
+      "entered_by": "who enters the record"
+    }
+  }
+}

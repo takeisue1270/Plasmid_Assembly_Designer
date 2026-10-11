@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: Plasmid Assembly Designer
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - given-names: Hiroaki
+    family-names: Takesue
+    orcid: "https://orcid.org/0000-0001-8585-5494"
+    affiliation: >-
+      Division of Transcriptomics, Medical Institute of Bioregulation,
+      Kyushu University
+repository-code: https://github.com/takeisue1270/Plasmid_Assembly_Designer
+url: https://github.com/takeisue1270/Plasmid_Assembly_Designer
+abstract: >-
+  A documented procedure and two command-line tools for designing Golden Gate
+  and HiFi assembly constructs from SnapGene .dna maps. The design is derived
+  from the bases in the maps, the product map is built by splicing the backbone
+  .dna, and the product is re-read from disk and verified before any oligo is
+  ordered. The procedure also keeps the oligo list and the project record in
+  step. Workbook and sheet names are configuration, not code.
+keywords:
+  - molecular cloning
+  - Golden Gate assembly
+  - HiFi assembly
+  - SnapGene
+  - plasmid map
+  - sgRNA cloning
+  - primer design
+license: MIT
+version: 0.1.0
+date-released: '2026-10-10'

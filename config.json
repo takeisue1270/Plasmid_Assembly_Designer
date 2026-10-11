@@ -1,0 +1,113 @@
+{
+  "_comment": [
+    "Default names for this workflow. Everything here is a NAME, not a machine",
+    "path, so it is safe to publish. Anything the caller does not specify falls",
+    "back to these values.",
+    "",
+    "Machine-specific absolute paths (where the project tree and the primer",
+    "registrar live) are NOT stored here. They come from environment variables",
+    "or from config.local.json, which is not part of the published package.",
+    "See references/configuration.md."
+  ],
+
+  "paths": {
+    "plasmid_dir": "plasmids",
+    "oligo_workbook": "oligos.xlsx",
+    "progress_workbook": "projects.xlsx",
+    "report_dir": "reports",
+    "backup_dirname": "Backup"
+  },
+
+  "sheets": {
+    "oligo": "Oligos",
+    "project": "Projects",
+    "template": "Template"
+  },
+
+  "oligo_sheet": {
+    "id_column": 1,
+    "name_column": 2,
+    "sequence_column": 3,
+    "first_data_row": 2,
+    "series_size": 81,
+    "id_pattern": "^(O\\d+)-(\\d+)$",
+    "id_format": "{series}-{index:02d}",
+    "copy_columns": "A:S"
+  },
+
+  "project_sheet": {
+    "template_range": "A18:AG22",
+    "blank_rows_between_blocks": 1,
+    "block_label": "Plasmid Construction",
+    "columns": {
+      "project_no": 2,
+      "sub_no": 3,
+      "method": 4,
+      "plasmid_map": 5,
+      "length": 6,
+      "plasmid_name": 7,
+      "re1": 8,
+      "re2": 9,
+      "backbone": 10,
+      "backbone_prep": 11,
+      "backbone_length": 12,
+      "oligo1": 13,
+      "oligo2": 14,
+      "template": 15,
+      "insert_length": 16,
+      "pcr_annealing": 17,
+      "dpni": 18,
+      "transformation": 19,
+      "miniprep": 20,
+      "plasmid_ext": 21,
+      "nanopore": 22,
+      "sequence_check": 23,
+      "plasmid_no": 24,
+      "plasmid_name_short": 25,
+      "competent_cell": 26,
+      "conc": 27,
+      "design": 28,
+      "order": 29,
+      "obtained": 30,
+      "made_by": 31,
+      "entered_by": 32,
+      "project_number": 33
+    },
+    "formulas": {
+      "plasmid_name_short": "=MID(G{row},9,150)",
+      "design": "=E{row}",
+      "obtained": "=TODAY()",
+      "project_number": "=B{row}&\"_\"&C{row}",
+      "project_no_repeat": "=B{prev}"
+    },
+    "defaults": {
+      "competent_cell": "DH5alpha",
+      "made_by": "",
+      "entered_by": ""
+    },
+    "date_format": "yyyy/mm/dd",
+    "number_format": "General"
+  },
+
+  "gga": {
+    "sense_prefix": "CACCG",
+    "antisense_prefix": "AAAC",
+    "antisense_suffix": "C",
+    "spacer_length": 20,
+    "insert_feature_name": "target_seq.",
+    "insert_feature_color": "#ffff99",
+    "stuffer_feature_match": "BbsI",
+    "default_enzyme": "BbsI-HF"
+  },
+
+  "hifi": {
+    "flap_length": 20,
+    "anneal_length_min": 18,
+    "anneal_length_max": 24
+  },
+
+  "dna_blocks": {
+    "keep": [9, 0, 3, 8, 10, 5, 6, 13, 28, 14],
+    "drop": [2, 7, 11, 16, 17, 27]
+  }
+}

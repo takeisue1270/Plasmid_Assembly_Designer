@@ -1,0 +1,25 @@
+{
+  "title": "Plasmid Assembly Designer",
+  "upload_type": "software",
+  "description": "<p>A documented procedure and two command-line tools for designing Golden Gate (GGA) and HiFi assembly constructs from SnapGene .dna maps, and for keeping the oligo list, the product maps and the project record consistent. The design is derived from the bases in the maps, the product map is built by splicing the backbone file, and the product is re-read from disk and verified before any oligo is ordered. Workbook and sheet names are configuration, not code.</p>",
+  "license": "mit-license",
+  "access_right": "open",
+  "version": "v0.1.0",
+  "creators": [
+    {
+      "name": "Takesue, Hiroaki",
+      "orcid": "0000-0001-8585-5494",
+      "affiliation": "Division of Transcriptomics, Medical Institute of Bioregulation, Kyushu University"
+    }
+  ],
+  "keywords": [
+    "molecular cloning",
+    "Golden Gate assembly",
+    "HiFi assembly",
+    "SnapGene",
+    "plasmid map",
+    "sgRNA cloning",
+    "primer design"
+  ],
+  "related_identifiers": []
+}
